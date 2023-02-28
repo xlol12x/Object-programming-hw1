@@ -1,0 +1,8 @@
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe.config
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.pdb
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.exe
+C:\Users\Admin\Downloads\e\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.pdb
