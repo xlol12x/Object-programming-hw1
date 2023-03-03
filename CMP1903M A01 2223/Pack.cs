@@ -15,19 +15,20 @@ namespace CMP1903M_A01_2223
         public List<string> _Pack()
         {
             Card c = new Card();
-            pack= new List<string>();
-            for (int i = 1; i<=4 ; i++)
+            pack = new List<string>();
+            for (int i = 1; i <= 4; i++)
                 for (int j = 1; j <= 13; j++)
-                    pack.Add(c.newCard(i,j));
+                    pack.Add(c.newCard(i, j));
             return pack;
         }
         // uses _Pack to get the cards to shuffle then picks 3 options 1-fisher yates, 2-riffle
         // or 3 no shuffle 
-        public static bool ShuffleCardPack(int typeOfShuffle,ref List<string> pack)
+        public static bool ShuffleCardPack(int choice, ref List<string> pack)
         {
             Pack shufflePack = new Pack();
             pack = shufflePack._Pack();
-            if (typeOfShuffle == 1)
+
+            if (choice == 1)
             {
                 Random _random = new Random();
                 int n = pack.Count;
@@ -38,13 +39,14 @@ namespace CMP1903M_A01_2223
                     pack[r] = pack[i];
                     pack[i] = t;
                 }
-                
+                return true;
+
             }
-            else if (typeOfShuffle == 2)
+            else if (choice == 2)
             {
                 int n = pack.Count;
-                int half = (n / 2)-1;
-                int j = half+1;
+                int half = (n / 2) - 1;
+                int j = half + 1;
                 for (int i = 0; i <= half; i++)
                 {
                     if (i % 2 == 0 || i == 0)
@@ -54,21 +56,37 @@ namespace CMP1903M_A01_2223
                         pack[j] = tmp;
                     }
                     j++;
-                }    
+                }
+                return true;
             }
-            return true;
+            else
+                Console.WriteLine("out of bounds-defaulted to no shuffle");
+            return false;
         }
         //Gets one card from the shuffled deck
-        public static string Deal (List<string> pack)
-        { 
+        public static string Deal(List<string> pack)
+        {
+            Console.WriteLine("You got this card ... " + pack[0]);
+            Console.ReadLine();
             return pack[0];
         }
         // Gets muitlple cards from the shuffled deck
-        public static List<string> dealCard(int amount,List<string> pack)
+        public static List<string> dealCard(int amount, List<string> pack)
         {
-            List<string> dealtCards= new List<string>();
-            for (int i = 0; i < amount; i++)
-                dealtCards.Add(pack[i]);
+            List<string> dealtCards = new List<string>();
+            if (amount <= 52 && amount >= 2)
+            {
+                for (int i = 0; i < amount; i++)
+                    dealtCards.Add(pack[i]);
+
+                Console.WriteLine("You got these cards...");
+                foreach (string card in dealtCards)
+                    Console.WriteLine(card);
+                Console.ReadLine();
+                return dealtCards;
+            }
+            else
+                dealtCards.Add(Pack.Deal(pack));
             return dealtCards;
         }
     }
